@@ -20,29 +20,16 @@ class Instagram():
         }
     def Api_folow(self,id_post):
         response = requests.post(f'https://www.instagram.com/web/friendships/{id_post}/follow/', headers=self.headers).text
-        if 'ok' in response:
-            return True
-        else:
-            return False
+        return response
     def Api_like(self,id_post):
         response = requests.post(f'https://www.instagram.com/web/likes/{id_post}/like/',headers=self.headers).text
-        if 'ok' in response:
-            return True
-        else:
-            return False
-        
+        return response   
     def Api_cmt(self,id_post):
         response = requests.post(f'https://www.instagram.com/web/comments/{id_post}/add/',headers=self.headers, data=self.data).text
-        if 'ok' in response:
-            return True
-        else:
-            return False
+        return response
     def Api_like_cmt(self,id_post):
         response = requests.post(f'https://www.instagram.com/web/comments/like/{id_post}/',headers=self.headers).text
-        if 'ok' in response:
-            return True
-        else:
-            return False
+        return response
 cookies = ''
 id_post = ''
 text = ''
